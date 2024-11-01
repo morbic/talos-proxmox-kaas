@@ -47,6 +47,7 @@ metadata:
 spec:
   selector:
     app.kubernetes.io/name: minio
+  type: LoadBalancer
   ports:
     - protocol: TCP
       port: 9000
@@ -60,6 +61,7 @@ metadata:
 spec:
   selector:
     app.kubernetes.io/name: minio
+  type: LoadBalancer
   ports:
     - protocol: TCP
       port: 9001
