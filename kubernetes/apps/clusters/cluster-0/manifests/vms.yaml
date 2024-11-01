@@ -8,7 +8,7 @@ spec:
   cluster: cluster-1
   #node: crash-lab ### If not set it will set automaticly from "pool"
   #vmid: 222  ### If not set it will set automaticly
-  pool: prod ### Cluster pool for place VM
+  pool: prod # Cluster pool for place VM
   anti-affinity: "" ### The anti-affinity group. VM's with same anti-affinity group will be placed on different nodes
   autostart: true
   autostop: true
@@ -23,11 +23,11 @@ spec:
     net0:
       model: virtio
       #mac: A2:7B:45:48:9C:E6  ### If not set it will set automaticly
-      bridge: vmbr0
+      bridge: vmbr20-k8s-mgmt
       tag: 0 # set to 0 if tag not needed
   disk:
-    scsi0:
-      storage: local-lvm
+    virtio0:
+      storage: local-nvme-vm
       size: 9G
   tags:
     - sidero
@@ -37,7 +37,7 @@ spec:
     bios: "seabios"
     smbios1: "uuid=f0ac3f32-ee63-11ed-a05b-0242ac120003,manufacturer=MTIz,product=MTIz,version=MTIz,serial=MTIz,sku=MTIz,family=MTIz,base64=1"
     scsihw: "virtio-scsi-pci"
-    boot: "order=net0;ide2;scsi0"
+    boot: "order=net0;ide2;virtio0"
     ide2: "none,media=cdrom"
     hotplug: "network,disk,usb"
     tablet: 1
@@ -57,7 +57,7 @@ spec:
   cluster: cluster-1
   #node: crash-lab ### If not set it will set automaticly from "pool"
   #vmid: 222  ### If not set it will set automaticly
-  pool: prod ### Cluster pool for place VM
+  pool: prod # Cluster pool for place VM
   anti-affinity: "" ### The anti-affinity group. VM's with same anti-affinity group will be placed on different nodes
   autostart: true
   autostop: true
@@ -72,11 +72,11 @@ spec:
     net0:
       model: virtio
       #mac: A2:7B:45:48:9C:E6  ### If not set it will set automaticly
-      bridge: vmbr0
+      bridge: vmbr20-k8s-mgmt
       tag: 0 # set to 0 if tag not needed
   disk:
-    scsi0:
-      storage: local-lvm
+    virtio0:
+      storage: local-nvme-vm
       size: 9G
   tags:
     - sidero
@@ -86,7 +86,7 @@ spec:
     bios: "seabios"
     smbios1: "uuid=fe4fadea-ee63-11ed-a05b-0242ac120003,manufacturer=MTIz,product=MTIz,version=MTIz,serial=MTIz,sku=MTIz,family=MTIz,base64=1"
     scsihw: "virtio-scsi-pci"
-    boot: "order=net0;ide2;scsi0"
+    boot: "order=net0;ide2;virtio0"
     ide2: "none,media=cdrom"
     hotplug: "network,disk,usb"
     tablet: 1
