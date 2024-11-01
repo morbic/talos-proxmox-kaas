@@ -137,7 +137,7 @@ spec:
     branch: main
   secretRef:
     name: github-creds
-  url: ssh://git@github.com/kubebn/talos-proxmox-kaas/
+  url: ssh://git@github.com/morbic/talos-proxmox-kaas/
 ---
 apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: OCIRepository

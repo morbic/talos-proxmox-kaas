@@ -89,7 +89,7 @@ cluster:
     cni:
       name: custom
       urls:
-        - https://raw.githubusercontent.com/kubebn/talos-proxmox-kaas/main/manifests/talos/cilium.yaml
+        - https://raw.githubusercontent.com/morbic/talos-proxmox-kaas/main/manifests/talos/cilium.yaml
   proxy:
     disabled: true
   etcd:
@@ -225,11 +225,11 @@ cluster:
   externalCloudProvider:
     enabled: true
     manifests:
-    - https://raw.githubusercontent.com/kubebn/talos-proxmox-kaas/main/manifests/talos/coredns-local.yaml
-    - https://raw.githubusercontent.com/kubebn/talos-proxmox-kaas/main/manifests/talos/metallb-native.yaml
-    - https://raw.githubusercontent.com/kubebn/talos-proxmox-kaas/main/manifests/talos/metrics-server.yaml
-    - https://raw.githubusercontent.com/kubebn/talos-proxmox-kaas/main/manifests/talos/fluxcd.yaml
-    - https://raw.githubusercontent.com/kubebn/talos-proxmox-kaas/main/manifests/talos/fluxcd-install.yaml
+    - https://raw.githubusercontent.com/morbic/talos-proxmox-kaas/main/manifests/talos/coredns-local.yaml
+    - https://raw.githubusercontent.com/morbic/talos-proxmox-kaas/main/manifests/talos/metallb-native.yaml
+    - https://raw.githubusercontent.com/morbic/talos-proxmox-kaas/main/manifests/talos/metrics-server.yaml
+    - https://raw.githubusercontent.com/morbic/talos-proxmox-kaas/main/manifests/talos/fluxcd.yaml
+    - https://raw.githubusercontent.com/morbic/talos-proxmox-kaas/main/manifests/talos/fluxcd-install.yaml
     - https://raw.githubusercontent.com/sergelogvinov/terraform-talos/main/_deployments/vars/talos-cloud-controller-manager-result.yaml
     - https://raw.githubusercontent.com/sergelogvinov/proxmox-cloud-controller-manager/main/docs/deploy/cloud-controller-manager-talos.yml
     - https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.64.1/example/prometheus-operator-crd/monitoring.coreos.com_alertmanagerconfigs.yaml
