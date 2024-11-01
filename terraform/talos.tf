@@ -12,7 +12,7 @@ data "talos_machine_configuration" "mc_1" {
   config_patches = [
     templatefile("${path.module}/templates/controlplane.yaml.tpl",
       merge(var.kubernetes, {
-        hostname         = "master-0"
+        hostname         = "k8s-master-0"
         ipv4_local       = "${cidrhost(var.vpc_main_cidr, var.first_ip)}"
         identity         = "${file(var.private_key_file_path)}"
         identitypub      = "${file(var.public_key_file_path)}"
@@ -58,7 +58,7 @@ data "talos_machine_configuration" "mc_2" {
   config_patches = [
     templatefile("${path.module}/templates/controlplane.yaml.tpl",
       merge(var.kubernetes, {
-        hostname         = "master-1"
+        hostname         = "k8s-master-1"
         ipv4_local       = "${cidrhost(var.vpc_main_cidr, var.first_ip + 1)}"
         identity         = "${file(var.private_key_file_path)}"
         identitypub      = "${file(var.public_key_file_path)}"
@@ -104,7 +104,7 @@ data "talos_machine_configuration" "mc_3" {
   config_patches = [
     templatefile("${path.module}/templates/controlplane.yaml.tpl",
       merge(var.kubernetes, {
-        hostname         = "master-2"
+        hostname         = "k8s-master-2"
         ipv4_local       = "${cidrhost(var.vpc_main_cidr, var.first_ip + 2)}"
         identity         = "${file(var.private_key_file_path)}"
         identitypub      = "${file(var.public_key_file_path)}"
@@ -193,7 +193,7 @@ data "talos_machine_configuration" "worker_1" {
   config_patches = [
     templatefile("${path.module}/templates/worker.yaml.tpl",
       merge(var.kubernetes, {
-        hostname   = "worker-0"
+        hostname   = "k8s-worker-0"
         ipv4_local = "${cidrhost(var.vpc_main_cidr, var.worker_first_ip)}"
         px_region  = var.region
         px_node    = var.target_node_name
@@ -214,7 +214,7 @@ data "talos_machine_configuration" "worker_2" {
   config_patches = [
     templatefile("${path.module}/templates/worker.yaml.tpl",
       merge(var.kubernetes, {
-        hostname   = "worker-1"
+        hostname   = "k8s-worker-1"
         ipv4_local = "${cidrhost(var.vpc_main_cidr, var.worker_first_ip + 1)}"
         px_region  = var.region
         px_node    = var.target_node_name
@@ -235,7 +235,7 @@ data "talos_machine_configuration" "worker_3" {
   config_patches = [
     templatefile("${path.module}/templates/worker.yaml.tpl",
       merge(var.kubernetes, {
-        hostname   = "worker-2"
+        hostname   = "k8s-worker-2"
         ipv4_local = "${cidrhost(var.vpc_main_cidr, var.worker_first_ip + 2)}"
         px_region  = var.region
         px_node    = var.target_node_name

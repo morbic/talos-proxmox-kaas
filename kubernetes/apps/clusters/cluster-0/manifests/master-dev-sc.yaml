@@ -34,7 +34,7 @@ spec:
     - op: replace
       path: /machine/install
       value:
-        disk: /dev/sda
+        disk: /dev/vda
         extraKernelArgs: ['elevator=noop']
     - op: replace
       path: /cluster/network/cni

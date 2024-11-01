@@ -14,16 +14,16 @@ source "proxmox" "talos" {
   node                     = var.proxmox_nodename
   insecure_skip_tls_verify = true
 
-  iso_file    = "local:iso/archlinux-2023.04.01-x86_64.iso"
+  iso_file    = "local:iso/archlinux-2024.10.01-x86_64.iso"
   unmount_iso = true
 
   scsi_controller = "virtio-scsi-pci"
   network_adapters {
-    bridge = "vmbr0"
+    bridge = "vmbr20-k8s-mgmt"
     model  = "virtio"
   }
   disks {
-    type              = "scsi"
+    type              = "virtio"
     storage_pool      = var.proxmox_storage
     storage_pool_type = var.proxmox_storage_type
     format            = "raw"
@@ -56,22 +56,7 @@ build {
   provisioner "shell" {
     inline = [
       "curl -L ${local.image} -o /tmp/talos.raw.xz",
-      "xz -d -c /tmp/talos.raw.xz | dd of=/dev/sda && sync",
-    ]
-  }
-}
-
-build {
-  name    = "develop"
-  sources = ["source.proxmox.talos"]
-
-  provisioner "file" {
-    source      = "../../../talos/_out/nocloud-amd64.raw.xz"
-    destination = "/tmp/talos.raw.xz"
-  }
-  provisioner "shell" {
-    inline = [
-      "xz -d -c /tmp/talos.raw.xz | dd of=/dev/sda && sync",
+      "xz -d -c /tmp/talos.raw.xz | dd of=/dev/vda && sync",
     ]
   }
 }
