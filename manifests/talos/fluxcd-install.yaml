@@ -4,7 +4,7 @@ metadata:
   name: cluster
   namespace: flux-system
 spec:
-  interval: 30m
+  interval: 5m
   path: ./kubernetes/flux
   prune: true
   sourceRef:
@@ -132,7 +132,7 @@ spec:
     /*
     # include kubernetes directory
     !/kubernetes
-  interval: 30m
+  interval: 5m
   ref:
     branch: main
   secretRef:
