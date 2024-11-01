@@ -28,6 +28,7 @@ data "talos_machine_configuration" "mc_1" {
               token_secret = var.proxmox_token_secret
               url          = var.proxmox_host
               region       = var.region
+              insecure     = true
             },
           ]
         })
@@ -74,6 +75,7 @@ data "talos_machine_configuration" "mc_2" {
               token_secret = var.proxmox_token_secret
               url          = var.proxmox_host
               region       = var.region
+              insecure     = true
             },
           ]
         })
@@ -120,6 +122,7 @@ data "talos_machine_configuration" "mc_3" {
               token_secret = var.proxmox_token_secret
               url          = var.proxmox_host
               region       = var.region
+              insecure     = true
             },
           ]
         })
