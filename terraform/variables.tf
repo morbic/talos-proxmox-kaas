@@ -18,7 +18,7 @@ variable "kubernetes" {
     px_node                 = ""
     sidero-endpoint         = ""
     storageclass            = ""
-    storageclass-xfs        = ""
+    storageclass-nvme        = ""
     cluster-0-vip           = ""
   }
 }
@@ -71,12 +71,12 @@ variable "proxmox_image" {
   default     = "talos"
 }
 
-variable "proxmox_storage1" {
-  description = "Proxmox storage name"
+variable "proxmox_storage_nvme" {
+  description = "Proxmox NVMe storage name"
   type        = string
 }
 
-variable "proxmox_storage2" {
+variable "proxmox_storage_hdd" {
   description = "Proxmox storage name"
   type        = string
 }

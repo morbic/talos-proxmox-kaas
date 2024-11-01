@@ -19,8 +19,8 @@ data "talos_machine_configuration" "mc_1" {
         knownhosts       = var.known_hosts
         px_region        = var.region
         px_node          = var.target_node_name
-        storageclass     = var.proxmox_storage2
-        storageclass-xfs = var.proxmox_storage1
+        storageclass-hdd  = var.proxmox_storage_hdd
+        storageclass-nvme = var.proxmox_storage_nvme
         clusters = yamlencode({
           clusters = [
             {
@@ -65,8 +65,8 @@ data "talos_machine_configuration" "mc_2" {
         knownhosts       = var.known_hosts
         px_region        = var.region
         px_node          = var.target_node_name
-        storageclass     = var.proxmox_storage2
-        storageclass-xfs = var.proxmox_storage1
+        storageclass-hdd  = var.proxmox_storage_hdd
+        storageclass-nvme = var.proxmox_storage_nvme
         clusters = yamlencode({
           clusters = [
             {
@@ -111,8 +111,8 @@ data "talos_machine_configuration" "mc_3" {
         knownhosts       = var.known_hosts
         px_region        = var.region
         px_node          = var.target_node_name
-        storageclass     = var.proxmox_storage2
-        storageclass-xfs = var.proxmox_storage1
+        storageclass-hdd  = var.proxmox_storage_hdd
+        storageclass-nvme = var.proxmox_storage_nvme
         clusters = yamlencode({
           clusters = [
             {

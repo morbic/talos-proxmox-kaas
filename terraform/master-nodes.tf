@@ -39,7 +39,7 @@ resource "proxmox_vm_qemu" "controlplanes" {
     ide {
       ide3 {
         cloudinit {
-          storage = var.proxmox_storage2
+          storage = var.proxmox_storage_nvme
         }
       }
     }
@@ -49,7 +49,7 @@ resource "proxmox_vm_qemu" "controlplanes" {
         disk {
           size            = 32
           cache           = "writethrough"
-          storage         = var.proxmox_storage2
+          storage         = var.proxmox_storage_nvme
           iothread        = true
           discard         = true
         }

@@ -219,8 +219,8 @@ cluster:
       data:
         CACHE_REGISTRY: ${registry-endpoint}
         SIDERO_ENDPOINT: ${sidero-endpoint}
-        STORAGE_CLASS: ${storageclass}
-        STORAGE_CLASS_XFS: ${storageclass-xfs}
+        STORAGE_CLASS_HDD: ${storageclass-hdd}
+        STORAGE_CLASS_NVME: ${storageclass-nvme}
         CLUSTER_0_VIP: ${cluster-0-vip} 
   externalCloudProvider:
     enabled: true

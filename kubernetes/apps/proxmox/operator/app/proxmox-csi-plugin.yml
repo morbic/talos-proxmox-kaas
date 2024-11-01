@@ -39,28 +39,28 @@ metadata:
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
-  name: proxmox-data-xfs
+  name: proxmox-data-nvme
 provisioner: csi.proxmox.sinextra.dev
 allowVolumeExpansion: true
 volumeBindingMode: WaitForFirstConsumer
 reclaimPolicy: Delete
 parameters:
   csi.storage.k8s.io/fstype: xfs
-  storage: "${STORAGE_CLASS_XFS}"
+  storage: "${STORAGE_CLASS_NVME}"
+  ssd: "true"
 ---
 # Source: proxmox-csi-plugin/templates/storageclass.yaml
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
-  name: proxmox-data
+  name: proxmox-data-hdd
 provisioner: csi.proxmox.sinextra.dev
 allowVolumeExpansion: true
 volumeBindingMode: WaitForFirstConsumer
 reclaimPolicy: Delete
 parameters:
   csi.storage.k8s.io/fstype: ext4
-  storage: "${STORAGE_CLASS}"
-  ssd: "true"
+  storage: "${STORAGE_CLASS_HDD}"
 ---
 # Source: proxmox-csi-plugin/templates/controller-clusterrole.yaml
 apiVersion: rbac.authorization.k8s.io/v1

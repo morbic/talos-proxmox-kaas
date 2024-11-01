@@ -38,7 +38,7 @@ resource "proxmox_vm_qemu" "workers" {
     ide {
       ide3 {
         cloudinit {
-          storage = var.proxmox_storage1
+          storage = var.proxmox_storage_nvme
         }
       }
     }
@@ -48,7 +48,7 @@ resource "proxmox_vm_qemu" "workers" {
         disk {
           size            = 40
           cache           = "writethrough"
-          storage         = var.proxmox_storage1
+          storage         = var.proxmox_storage_nvme
           iothread        = true
           discard         = true
         }
