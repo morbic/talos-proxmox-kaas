@@ -6,10 +6,10 @@ metadata:
   name: proxmox-operator
   namespace: kube-system
   labels:
-    helm.sh/chart: proxmox-operator-0.1.1
+    helm.sh/chart: proxmox-operator-1.0.0
     app.kubernetes.io/name: proxmox-operator
     app.kubernetes.io/instance: proxmox-operator
-    app.kubernetes.io/version: "0.1.1"
+    app.kubernetes.io/version: "1.0.0"
     app.kubernetes.io/managed-by: Helm
 ---
 # Source: proxmox-operator/templates/crds.yaml
@@ -174,10 +174,10 @@ metadata:
   name: proxmox-operator
   namespace: kube-system
   labels:
-    helm.sh/chart: proxmox-operator-0.1.1
+    helm.sh/chart: proxmox-operator-1.0.0
     app.kubernetes.io/name: proxmox-operator
     app.kubernetes.io/instance: proxmox-operator
-    app.kubernetes.io/version: "0.1.1"
+    app.kubernetes.io/version: "1.0.0"
     app.kubernetes.io/managed-by: Helm
 spec:
   replicas: 1
@@ -198,7 +198,7 @@ spec:
         - name: proxmox-operator
           securityContext:
             {}
-          image: "crashntech/proxmox-operator:0.1.2"
+          image: "crashntech/proxmox-operator:1.0.0"
           imagePullPolicy: IfNotPresent
           resources:
             limits:
