@@ -11,7 +11,7 @@ resource "proxmox_vm_qemu" "controlplanes" {
   qemu_os                 = "l26"
   ipconfig0               = "ip=${cidrhost(var.vpc_main_cidr, var.first_ip + "${count.index}")}/24,gw=${var.gateway}"
 
-  onboot  = false
+  onboot  = true
   cpu     = "host"
   sockets = 1
   cores   = 2

@@ -25,7 +25,6 @@ spec:
     strategy: Webhook
     webhook:
       clientConfig:
-        caBundle: Cg==
         service:
           name: cabpt-webhook-service
           namespace: cabpt-system
@@ -252,7 +251,6 @@ spec:
     strategy: Webhook
     webhook:
       clientConfig:
-        caBundle: Cg==
         service:
           name: cabpt-webhook-service
           namespace: cabpt-system

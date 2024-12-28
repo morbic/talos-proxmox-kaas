@@ -20,7 +20,6 @@ spec:
     strategy: Webhook
     webhook:
       clientConfig:
-        caBundle: Cg==
         service:
           name: capi-webhook-service
           namespace: capi-system
@@ -1681,7 +1680,6 @@ spec:
     strategy: Webhook
     webhook:
       clientConfig:
-        caBundle: Cg==
         service:
           name: capi-webhook-service
           namespace: capi-system
@@ -1979,7 +1977,6 @@ spec:
     strategy: Webhook
     webhook:
       clientConfig:
-        caBundle: Cg==
         service:
           name: capi-webhook-service
           namespace: capi-system
@@ -2497,7 +2494,6 @@ spec:
     strategy: Webhook
     webhook:
       clientConfig:
-        caBundle: Cg==
         service:
           name: capi-webhook-service
           namespace: capi-system
@@ -4494,7 +4490,6 @@ spec:
     strategy: Webhook
     webhook:
       clientConfig:
-        caBundle: Cg==
         service:
           name: capi-webhook-service
           namespace: capi-system
@@ -5987,7 +5982,6 @@ spec:
     strategy: Webhook
     webhook:
       clientConfig:
-        caBundle: Cg==
         service:
           name: capi-webhook-service
           namespace: capi-system
@@ -6818,7 +6812,6 @@ spec:
     strategy: Webhook
     webhook:
       clientConfig:
-        caBundle: Cg==
         service:
           name: capi-webhook-service
           namespace: capi-system
@@ -8237,7 +8230,6 @@ spec:
     strategy: Webhook
     webhook:
       clientConfig:
-        caBundle: Cg==
         service:
           name: capi-webhook-service
           namespace: capi-system
@@ -9411,7 +9403,6 @@ spec:
     strategy: Webhook
     webhook:
       clientConfig:
-        caBundle: Cg==
         service:
           name: capi-webhook-service
           namespace: capi-system

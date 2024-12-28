@@ -143,7 +143,6 @@ spec:
     strategy: Webhook
     webhook:
       clientConfig:
-        caBundle: Cg==
         service:
           name: caps-webhook-service
           namespace: sidero-system
@@ -318,7 +317,6 @@ spec:
     strategy: Webhook
     webhook:
       clientConfig:
-        caBundle: Cg==
         service:
           name: caps-webhook-service
           namespace: sidero-system
@@ -764,7 +762,6 @@ spec:
     strategy: Webhook
     webhook:
       clientConfig:
-        caBundle: Cg==
         service:
           name: caps-webhook-service
           namespace: sidero-system
@@ -1091,7 +1088,6 @@ spec:
     strategy: Webhook
     webhook:
       clientConfig:
-        caBundle: Cg==
         service:
           name: caps-webhook-service
           namespace: sidero-system
