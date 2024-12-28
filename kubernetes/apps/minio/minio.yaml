@@ -16,12 +16,12 @@ metadata:
 spec:
   containers:
     - name: minio
-      image: quay.io/minio/minio:RELEASE.2024-10-29T16-01-48Z
-      command:
-        - /bin/bash
-        - -c
+      image: quay.io/minio/minio:RELEASE.2024-12-13T22-19-12Z
       args:
-        - minio server /data --console-address :9001
+        - server
+        - /data
+        - "--console-address"
+        - ":9001"
       volumeMounts:
         - mountPath: /data
           name: minio-storage-cold
