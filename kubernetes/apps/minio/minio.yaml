@@ -6,38 +6,59 @@ metadata:
   labels:
     name: minio
 ---
-apiVersion: v1
-kind: Pod
+apiVersion: apps/v1
+kind: Deployment
 metadata:
   labels:
-    app: minio
+    app.kubernetes.io/name: minio
   name: minio
   namespace: minio
 spec:
-  containers:
-    - name: minio
-      image: quay.io/minio/minio:RELEASE.2024-12-13T22-19-12Z
-      args:
-        - server
-        - /data
-        - "--console-address"
-        - ":9001"
-      volumeMounts:
-        - mountPath: /data
-          name: minio-storage-cold
-  volumes:
-    - name: minio-storage-cold
-      ephemeral:
-        volumeClaimTemplate:
-          metadata:
-            labels:
-              type: pvc-volume
-          spec:
-            accessModes: [ "ReadWriteOnce" ]
-            storageClassName: proxmox-data-hdd
-            resources:
-              requests:
-                storage: 1Ti
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: minio
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: minio
+    spec:
+      containers:
+        - name: minio
+          image: quay.io/minio/minio:RELEASE.2024-12-13T22-19-12Z
+          args:
+            - server
+            - /data
+            - "--console-address"
+            - ":9001"
+          volumeMounts:
+            - mountPath: /data
+              name: minio-storage-cold
+          ports:
+            - containerPort: 9000
+            - containerPort: 9001
+          resources:
+            limits:
+              cpu: "1"
+              memory: 512Mi
+            requests:
+              cpu: 100m
+              memory: 128Mi
+      volumes:
+        - name: minio-storage-cold
+          ephemeral:
+            volumeClaimTemplate:
+              metadata:
+                labels:
+                  type: pvc-volume
+              spec:
+                accessModes: [ "ReadWriteOnce" ]
+                storageClassName: proxmox-data-hdd
+                resources:
+                  requests:
+                    storage: 1Ti
 ---
 apiVersion: v1
 kind: Service
