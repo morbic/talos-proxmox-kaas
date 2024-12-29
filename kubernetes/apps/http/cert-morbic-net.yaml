@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: wildcard-morbic-net
+  namespace: http
+spec:
+  secretName: wildcard-morbic-net-tls
+  dnsNames:
+    - "morbic.net"
+    - "*.morbic.net"
+  issuerRef:
+    name: cloudflare
+    kind: Issuer

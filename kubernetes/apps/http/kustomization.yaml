@@ -5,5 +5,8 @@ kind: Kustomization
 resources:
   # Pre Flux-Kustomizations
   - ./namespace.yaml
+  - ./cert-issuer-letsencrypt-cloudflare.yaml
+  - ./cert-browarski-com.yaml
+  - ./cert-morbic-net.yaml
   # Flux-Kustomizations
   - ./traefik/ks.yaml

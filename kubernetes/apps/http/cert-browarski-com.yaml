@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: wildcard-browarski-com
+  namespace: http
+spec:
+  secretName: wildcard-browarski-com-tls
+  dnsNames:
+    - "browarski.com"
+    - "*.browarski.com"
+  issuerRef:
+    name: cloudflare
+    kind: Issuer
