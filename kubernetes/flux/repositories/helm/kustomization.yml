@@ -6,3 +6,4 @@ resources:
   - ./external-dns.yaml
   - ./jetstack.yaml
   - ./proxmox-operator.yaml
+  - ./traefik.yaml
