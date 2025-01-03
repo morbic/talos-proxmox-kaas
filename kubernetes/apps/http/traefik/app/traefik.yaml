@@ -25,6 +25,15 @@ spec:
   uninstall:
     keepHistory: false
   values:
+    ## https://github.com/kubernetes/kubernetes/issues/47249#issuecomment-587960741
+    ports:
+      websecure:
+        http3:
+          enabled: true
+      traefik:
+        expose: true
+    service:
+      single: false
     ingressRoute:
       dashboard:
         enabled: true
