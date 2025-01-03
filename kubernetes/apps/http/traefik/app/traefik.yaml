@@ -31,7 +31,8 @@ spec:
         http3:
           enabled: true
       traefik:
-        expose: true
+        expose:
+          default: true
     service:
       single: false
     ingressRoute:
