@@ -41,3 +41,4 @@ spec:
     logs:
       access:
         enabled: true
+        filePath: ""
