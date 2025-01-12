@@ -24,6 +24,7 @@ spec:
       retries: 3
   uninstall:
     keepHistory: false
+  # https://github.com/traefik/traefik-helm-chart/blob/master/traefik/values.yaml
   values:
     ## https://github.com/kubernetes/kubernetes/issues/47249#issuecomment-587960741
     ports:
@@ -35,6 +36,7 @@ spec:
           default: true
     service:
       single: false
+      externalTrafficPolicy: Local
     ingressRoute:
       dashboard:
         enabled: true
