@@ -29,6 +29,8 @@ spec:
     mode: standalone
     rootUser: morbic
     mountPath: /data
+    deploymentUpdate:
+      type: Recreate
     persistence:
       enabled: true
       storageClass: proxmox-data-hdd
