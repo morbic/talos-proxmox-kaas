@@ -32,7 +32,7 @@ spec:
     persistence:
       enabled: true
       storageClass: proxmox-data-hdd
-      size: 1Ti
+      size: 2Ti
     ingress:
       enabled: true
       hosts:
@@ -83,8 +83,8 @@ spec:
         statements:
           - effect: Allow
             resources:
-              - 'arn:aws:s3:::photos_s/*'
-              - 'arn:aws:s3:::photos_s'
+              - 'arn:aws:s3:::photos-s/*'
+              - 'arn:aws:s3:::photos-s'
             actions:
               - "s3:*"
     users:
@@ -96,20 +96,23 @@ spec:
         existingSecret: minio-users
         existingSecretKey: photosSecretKey
         policy: photos_rw
-      - accessKey: photos_s
+      - accessKey: photos-s
         existingSecret: minio-users
         existingSecretKey: sPhotosSecretKey
         policy: photos_s_rw
     buckets:
       - name: nextcloud
-        # Policy to be set on the
-        # bucket [none|download|upload|public]
         policy: none
-        # Purge if bucket exists already
         purge: false
-        # set versioning for
-        # bucket [true|false]
         versioning: true
-        # set objectlocking for
-        # bucket [true|false] NOTE: versioning is enabled by default if you use locking
+        objectlocking: false
+      - name: photos
+        policy: none
+        purge: false
+        versioning: true
+        objectlocking: false
+      - name: photos-s
+        policy: none
+        purge: false
+        versioning: true
         objectlocking: false
