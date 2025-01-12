@@ -54,10 +54,12 @@ spec:
           port: 9000
           region: kmi
           bucket: nextcloud
+          autoCreate: false
           usePathStyle: true
           existingSecret: nextcloud-password
-          accessKey: s3AccessKey
-          secretKey: s3SecretKey
+          secretKeys:
+            accessKey: s3AccessKey
+            secretKey: s3SecretKey
     cronjob:
       enabled: true
     internalDatabase:
