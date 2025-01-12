@@ -46,6 +46,18 @@ spec:
         usernameKey: username
         passwordKey: password
         tokenKey: metricsToken
+      objectStore:
+        s3:
+          enabled: true
+          host: minio.minio
+          ssl: false
+          port: 9000
+          region: kmi
+          bucket: nextcloud
+          usePathStyle: true
+          existingSecret: nextcloud-password
+          accessKey: s3AccessKey
+          secretKey: s3SecretKey
     cronjob:
       enabled: true
     internalDatabase:

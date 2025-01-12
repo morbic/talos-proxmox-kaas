@@ -35,6 +35,9 @@ spec:
       enabled: true
       storageClass: proxmox-data-hdd
       size: 2Ti
+    environment:
+      MINIO_COMPRESSION_ENABLE: on
+      MINIO_COMPRESSION_EXTENSIONS: ".txt, .log, .csv, .json, .tar, .xml, .bin, .docx, .xlsx"
     ingress:
       enabled: true
       hosts:
