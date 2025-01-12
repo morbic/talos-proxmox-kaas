@@ -24,3 +24,10 @@ spec:
       retries: 3
   uninstall:
     keepHistory: false
+  # https://github.com/bitnami/charts/blob/main/bitnami/postgresql/values.yaml
+  values:
+    primary:
+      persistence:
+        volumeName: postgresql-data
+        storageClass: proxmox-data-nvme
+        size: 2Gi
