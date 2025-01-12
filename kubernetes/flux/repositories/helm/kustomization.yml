@@ -6,6 +6,7 @@ resources:
   - ./bitnami.yaml
   - ./external-dns.yaml
   - ./jetstack.yaml
+  - ./minio.yaml
   - ./nextcloud.yaml
   - ./proxmox-operator.yaml
   - ./traefik.yaml
