@@ -38,6 +38,9 @@ spec:
         - hosts:
             - "pliki.browarski.com"
           secretName: pliki-browarski-com
+    phpClientHttpsFix:
+      enabled: true
+      protocol: https
     nextcloud:
       host: pliki.browarski.com
       existingSecret:
