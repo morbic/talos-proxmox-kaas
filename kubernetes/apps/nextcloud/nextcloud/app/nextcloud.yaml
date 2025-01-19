@@ -41,6 +41,10 @@ spec:
     phpClientHttpsFix:
       enabled: true
       protocol: https
+    persistence:
+      enabled: true
+      storageClass: proxmox-data-hdd
+      size: 1Gi
     nextcloud:
       host: pliki.browarski.com
       existingSecret:
