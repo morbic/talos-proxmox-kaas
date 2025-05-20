@@ -92,6 +92,8 @@ spec:
       enabled: false
     redis:
       enabled: true
+      global:
+        storageClass: proxmox-data-nvme
     externalDatabase:
       enabled: true
       type: postgresql
