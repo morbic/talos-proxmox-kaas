@@ -38,6 +38,12 @@ spec:
         - hosts:
             - "pliki.browarski.com"
           secretName: pliki-browarski-com
+    livenessProbe:
+      periodSeconds: 30
+      timeoutSeconds: 30
+    readinessProbe:
+      periodSeconds: 30
+      timeoutSeconds: 30
     phpClientHttpsFix:
       enabled: true
       protocol: https
@@ -50,8 +56,8 @@ spec:
         cpu: 100m
         memory: 128Mi
       limits:
-        cpu: 1000m
-        memory: 1024Mi
+        cpu: 2000m
+        memory: 1536Mi
     nextcloud:
       host: pliki.browarski.com
       existingSecret:
@@ -61,8 +67,11 @@ spec:
         passwordKey: password
         tokenKey: metricsToken
       phpConfigs:
-        zz-max_input_vars.ini: |-
+        zz-config.ini: |-
           max_input_vars=5000
+          max_chunk_size=100M
+          upload_max_filesize=5G
+          memory_limit=1024M
       objectStore:
         s3:
           enabled: true
@@ -81,6 +90,8 @@ spec:
       enabled: true
     internalDatabase:
       enabled: false
+    redis:
+      enabled: true
     externalDatabase:
       enabled: true
       type: postgresql
