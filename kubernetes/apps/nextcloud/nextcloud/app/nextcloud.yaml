@@ -80,7 +80,14 @@ spec:
           upload_max_filesize=5G
           memory_limit=1024M
           opcache.enable=1 
-          opcache.jit_buffer_size=100M
+          opcache.memory_consumption=128M
+          opcache.jit_buffer_size=32M
+          opcache.validate_timestamps=0
+          opcache.save_comments=1
+        zz-www.conf: |
+          [www]
+          pm.max_children = 30
+          pm.max_spare_servers = 8
       objectStore:
         s3:
           enabled: true
