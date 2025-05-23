@@ -41,7 +41,7 @@ spec:
             - "pliki.browarski.com"
           secretName: pliki-browarski-com
     hpa:
-      enabled: true
+      enabled: false
       cputhreshold: 60
       minPods: 3
       maxPods: 10
