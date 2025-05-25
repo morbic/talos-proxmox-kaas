@@ -10,3 +10,4 @@ resources:
   - ./nextcloud.yaml
   - ./proxmox-operator.yaml
   - ./traefik.yaml
+  - ./yandex-s3.yaml
