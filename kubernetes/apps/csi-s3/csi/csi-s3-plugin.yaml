@@ -26,8 +26,6 @@ spec:
     keepHistory: false
   # https://github.com/yandex-cloud/k8s-csi-s3/blob/master/deploy/helm/csi-s3/values.yaml
   values:
-    secret:
-      create: true
-      name: csi-s3-secret
-      endpoint: https://s3.kmi.morbic.net/
-      region: kmi
+    storageClass:
+      mountOptions: ""
+      reclaimPolicy: Retain
