@@ -11,7 +11,7 @@ spec:
         kind: HelmRepository
         name: yandex-s3
         namespace: flux-system
-      version: 0.42.1
+      version: 0.43.0
   interval: 5m
   maxHistory: 2
   install:
@@ -27,5 +27,5 @@ spec:
   # https://github.com/yandex-cloud/k8s-csi-s3/blob/master/deploy/helm/csi-s3/values.yaml
   values:
     storageClass:
-      mountOptions: ""
+      mountOptions: "--no-systemd --memory-limit 1000 --dir-mode 0777 --file-mode 0666"
       reclaimPolicy: Retain
